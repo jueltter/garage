@@ -1,0 +1,14 @@
+services:
+  garage:
+    image: docker.io/dxflrs/garage:v2.5.0
+    container_name: garage
+    restart: unless-stopped
+    ports:
+      - "3900:3900" # S3 API (Your GitLab Runners connect here)
+      - "3903:3903" # Admin API (Internal management)
+    volumes:
+      - .quadlet/container/garage.toml:/etc/garage.toml:ro
+      - garage_data:/var/lib/garage
+
+volumes:
+  garage_data:

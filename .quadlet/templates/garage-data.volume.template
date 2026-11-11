@@ -1,0 +1,4 @@
+# ~/.config/containers/systemd/garage-data.volume
+
+[Volume]
+VolumeName=garage-data
